@@ -15,13 +15,12 @@ $('document').ready(function(){
 			$.ajax({
 		  		url: url + querystring.join('&')
 			}).done(function(data) {
-				alert(data);
 				$data = $.parseJSON(data);
 				if ($data.Response === 'True') {
 					if (confirm($data.Title + " (" + $data.Year + "), dir. " + $data.Director + "?")) {
 						$('#FilmTitle').val($data.Title);
 						$('#FilmYear').val($data.Year);
-						$('#FilmImdbId').val($data.imdbId);
+						$('#FilmImdbId').val($data.imdbid);
 						$('#FilmRated').val($data.Rated);
 						$('#FilmReleased').val($data.Released);
 						$('#FilmRuntime').val($data.Runtime);
@@ -31,8 +30,8 @@ $('document').ready(function(){
 						$('#FilmActors').val($data.Actors);
 						$('#FilmPlot').val($data.Plot);
 						$('#FilmPoster').val($data.Poster);
-						$('#FilmImdbRating').val($data.imdbRating);
-						$('#FilmImdbVotes').val($data.imdbVotes);
+						$('#FilmImdbRating').val($data.imdbrating);
+						$('#FilmImdbVotes').val($data.imdbvotes);
 						$('#FilmUserId').val(user);
 						$('#FilmAddForm').submit();
 					}
