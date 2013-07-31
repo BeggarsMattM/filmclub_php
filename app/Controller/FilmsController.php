@@ -49,6 +49,10 @@ class FilmsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Film->create();
 			if ($this->Film->save($this->request->data)) {
+				$path = 'img/' . $this->request->data['Film']['imdbid'] . '.jpg';
+				if (!file_exists($path)) {
+					file_put_contents($path, file_get_contents($this->request->data['Film']['poster']));
+				}
 				$this->Session->setFlash(__('The film has been saved'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
