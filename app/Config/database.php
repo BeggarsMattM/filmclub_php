@@ -61,10 +61,10 @@ class DATABASE_CONFIG {
 		$this->default = array(
 			'datasource' => 'Database/Postgres',
 			'persistent' => false,
-			'host' => getenv('DB_HOST'),
-			'login' => getenv('DB_USER'),
-			'password' => getenv('DB_PASS'),
-			'database' => getenv('DB_NAME'),
+			'host' => 'ec2-107-20-164-164.compute-1.amazonaws.com',
+			'login' => 'rptawyfjgrkrun',
+			'password' => 'xI-HOzM02cLG6_NZAIsN0QzDSi',
+			'database' => 'dvn5aed8lp8dq',
 			'prefix' => '',
 			'encoding' => 'utf8',
 		);
