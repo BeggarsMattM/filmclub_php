@@ -1,0 +1,35 @@
+<div class="films form">
+<?php echo $this->Form->create('Film'); ?>
+	<fieldset>
+		<legend><?php echo __('Edit Film'); ?></legend>
+	<?php
+		echo $this->Form->input('id');
+		echo $this->Form->input('title');
+		echo $this->Form->input('year');
+		echo $this->Form->input('rated');
+		echo $this->Form->input('released');
+		echo $this->Form->input('runtime');
+		echo $this->Form->input('genre');
+		echo $this->Form->input('director');
+		echo $this->Form->input('writer');
+		echo $this->Form->input('actors');
+		echo $this->Form->input('plot');
+		echo $this->Form->input('poster');
+		echo $this->Form->input('imdbrating');
+		echo $this->Form->input('imdbvotes');
+		echo $this->Form->input('imdbid');
+		echo $this->Form->input('user_id');
+	?>
+	</fieldset>
+<?php echo $this->Form->end(__('Submit')); ?>
+</div>
+<div class="actions">
+	<h3><?php echo __('Actions'); ?></h3>
+	<ul>
+
+		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Film.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('Film.id'))); ?></li>
+		<li><?php echo $this->Html->link(__('List Films'), array('action' => 'index')); ?></li>
+		<li><?php echo $this->Html->link(__('List Users'), array('controller' => 'users', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New User'), array('controller' => 'users', 'action' => 'add')); ?> </li>
+	</ul>
+</div>
