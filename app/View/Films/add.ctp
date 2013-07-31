@@ -16,12 +16,11 @@ $('document').ready(function(){
 		  		url: url + querystring.join('&')
 			}).done(function(data) {
 				$data = $.parseJSON(data);
-				alert(data);
 				if ($data.Response === 'True') {
 					if (confirm($data.Title + " (" + $data.Year + "), dir. " + $data.Director + "?")) {
 						$('#FilmTitle').val($data.Title);
 						$('#FilmYear').val($data.Year);
-						$('#FilmImdbid').val($data.imdbId);
+						$('#FilmImdbid').val($data.imdbID);
 						$('#FilmRated').val($data.Rated);
 						$('#FilmReleased').val($data.Released);
 						$('#FilmRuntime').val($data.Runtime);
