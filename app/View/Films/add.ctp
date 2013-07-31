@@ -5,17 +5,18 @@ $('document').ready(function(){
 	$('#clicker').click(function(){
 		var title = $('#FilmTitle').val();
 		var year = $('#FilmYear').val();
-		var imdbid = $('#FilmImdbId').val();
+		var imdbid = $('#FilmImdbid').val();
 		var url = 'http://www.omdbapi.com/?';
 		if (title || year || imdbid) {
 			querystring = [];
 			if (title) querystring.push('t='+title);
 			if (year) querystring.push('y='+year);
-			if (imdbid) querystring.push('i='+imdb);
+			if (imdbid) querystring.push('i='+imdbid);
 			$.ajax({
 		  		url: url + querystring.join('&')
 			}).done(function(data) {
 				$data = $.parseJSON(data);
+				alert(data);
 				if ($data.Response === 'True') {
 					if (confirm($data.Title + " (" + $data.Year + "), dir. " + $data.Director + "?")) {
 						$('#FilmTitle').val($data.Title);
