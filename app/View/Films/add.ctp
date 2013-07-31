@@ -20,7 +20,7 @@ $('document').ready(function(){
 					if (confirm($data.Title + " (" + $data.Year + "), dir. " + $data.Director + "?")) {
 						$('#FilmTitle').val($data.Title);
 						$('#FilmYear').val($data.Year);
-						$('#FilmImdbId').val($data.imdbid);
+						$('#FilmImdbid').val($data.imdbId);
 						$('#FilmRated').val($data.Rated);
 						$('#FilmReleased').val($data.Released);
 						$('#FilmRuntime').val($data.Runtime);
@@ -30,8 +30,8 @@ $('document').ready(function(){
 						$('#FilmActors').val($data.Actors);
 						$('#FilmPlot').val($data.Plot);
 						$('#FilmPoster').val($data.Poster);
-						$('#FilmImdbRating').val($data.imdbrating);
-						$('#FilmImdbVotes').val($data.imdbvotes);
+						$('#FilmImdbrating').val($data.imdbRating);
+						$('#FilmImdbvotes').val($data.imdbVotes);
 						$('#FilmUserId').val(user);
 						$('#FilmAddForm').submit();
 					}
@@ -50,7 +50,7 @@ $('document').ready(function(){
 	<?php
 		echo $this->Form->input('title');
 		echo $this->Form->input('year');
-		echo $this->Form->input('imdbId');
+		echo $this->Form->input('imdbid');
 	?>
 	<div id="clicker">Click here to search</div>
 	<?php	
@@ -63,8 +63,8 @@ $('document').ready(function(){
 		echo $this->Form->input('actors', array('type'=>'hidden'));
 		echo $this->Form->input('plot', array('type'=>'hidden'));
 		echo $this->Form->input('poster', array('type'=>'hidden'));
-		echo $this->Form->input('imdbRating', array('type'=>'hidden'));
-		echo $this->Form->input('imdbVotes', array('type'=>'hidden'));
+		echo $this->Form->input('imdbrating', array('type'=>'hidden'));
+		echo $this->Form->input('imdbvotes', array('type'=>'hidden'));
 		echo $this->Form->input('user_id', array('type'=>'hidden'));
 	?>
 	</fieldset>
