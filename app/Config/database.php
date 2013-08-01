@@ -55,21 +55,16 @@
  */
 class DATABASE_CONFIG {
 
-	public $default;
-	function __construct() {
-
-		$this->default = array(
-			'datasource' => 'Database/Postgres',
-			'persistent' => false,
-			'host' => 'ec2-107-20-164-164.compute-1.amazonaws.com',
-			'login' => 'rptawyfjgrkrun',
-			'password' => 'xI-HOzM02cLG6_NZAIsN0QzDSi',
-			'database' => 'dvn5aed8lp8dq',
-			'prefix' => '',
-			'encoding' => 'utf8',
-		);
-
-	}
+	public $default = array(
+		'datasource' => 'Database/Mysql',
+		'persistent' => false,
+		'host' => '164.177.138.10',
+		'login' => 'tcollins',
+		'password' => 'zLX2RapW',
+		'database' => 'beggarsfilm',
+		'prefix' => '',
+		'encoding' => 'utf8',
+	);
 
 	public $test = array(
 		'datasource' => 'Database/Mysql',

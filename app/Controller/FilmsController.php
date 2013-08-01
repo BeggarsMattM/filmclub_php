@@ -22,7 +22,13 @@ class FilmsController extends AppController {
  */
 	public function index() {
 		$this->Film->recursive = 0;
-		$this->set('films', $this->Paginator->paginate());
+		$this->paginate = array(
+			'limit' => 10,
+  			'order' => array('Film.title' => 'asc')
+		);
+
+		$data = $this->paginate('Film');
+		$this->set('films', $data);
 	}
 
 /**
@@ -47,6 +53,8 @@ class FilmsController extends AppController {
  */
 	public function add() {
 		if ($this->request->is('post')) {
+			$newdate = date('Y-m-d', strtotime($this->request->data['Film']['released']));
+			$this->request->data['Film']['released'] = $newdate;
 			$this->Film->create();
 			if ($this->Film->save($this->request->data)) {
 				$path = 'img/' . $this->request->data['Film']['imdbid'] . '.jpg';

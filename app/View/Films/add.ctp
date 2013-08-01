@@ -15,6 +15,7 @@ $('document').ready(function(){
 			$.ajax({
 		  		url: url + querystring.join('&')
 			}).done(function(data) {
+				alert(data);
 				$data = $.parseJSON(data);
 				if ($data.Response === 'True') {
 					if (confirm($data.Title + " (" + $data.Year + "), dir. " + $data.Director + "?")) {
