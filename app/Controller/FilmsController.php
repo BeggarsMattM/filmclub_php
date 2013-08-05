@@ -117,4 +117,21 @@ class FilmsController extends AppController {
 		$this->Session->setFlash(__('Film was not deleted'));
 		return $this->redirect(array('action' => 'index'));
 	}
+
+	public function getrandom() {
+		$users = $this->Film->User->find('list');
+		$random_id = array_rand($users, 1);
+		$films = $this->Film->findAllByUserId($random_id);
+		if (!empty($films)) {
+			$random_film_id = array_rand($films, 1);
+			$film = $films[$random_film_id]['Film'];
+			$user = $films[$random_film_id]['User'];
+			$this->set(compact('film', 'user'));
+		}
+		else {
+			$this->Session->setFlash($users[$random_id] . " hasn't added any films!");
+		}
+
+	}
+
 }
